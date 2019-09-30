@@ -10,14 +10,17 @@ public class HomePage {
 
     WebDriver driver;
     WebElement we;
-   // protected WebDriverWait wait = new WebDriverWait(driver, 10);
+    public WebDriverWait wait = new WebDriverWait(driver, 10);
 
     HomePage(WebDriver driver){
         this.driver=driver;
     }
 
+    HomePage homePage = new HomePage(driver);
+
     private static String homePageUrl = "https://teechip.com/defaulttest";
     private By classicTshirtBtn = By.cssSelector("div:nth-child(8) > div > div > div > div > img");
+
 
     public HomePage navigateToHomePage(){
         driver.navigate().to(homePageUrl);
@@ -25,8 +28,8 @@ public class HomePage {
     }
 
     public String chooseClassicTshirt(){
-       // we = wait.until(ExpectedConditions.elementToBeClickable(classicTshirtBtn));
-        we = driver.findElement(By.cssSelector("div:nth-child(8) > div > div > div > div > img"));
+        we = wait.until(ExpectedConditions.elementToBeClickable(classicTshirtBtn));
+       // we = driver.findElement(By.cssSelector("div:nth-child(8) > div > div > div > div > img"));
         we.click();
         return driver.getCurrentUrl();
     }
