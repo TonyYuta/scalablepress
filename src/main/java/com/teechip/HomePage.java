@@ -10,8 +10,7 @@ public class HomePage {
 
     WebDriver driver;
     WebElement we;
-    protected WebDriverWait wait = new WebDriverWait(driver, 10);
-
+   // protected WebDriverWait wait = new WebDriverWait(driver, 10);
 
     HomePage(WebDriver driver){
         this.driver=driver;
@@ -26,7 +25,8 @@ public class HomePage {
     }
 
     public String chooseClassicTshirt(){
-        we = wait.until(ExpectedConditions.elementToBeClickable(classicTshirtBtn));
+       // we = wait.until(ExpectedConditions.elementToBeClickable(classicTshirtBtn));
+        we = driver.findElement(By.cssSelector("div:nth-child(8) > div > div > div > div > img"));
         we.click();
         return driver.getCurrentUrl();
     }
