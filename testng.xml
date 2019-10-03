@@ -1,12 +1,12 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="End-to-End test">
-<parameter name="appURL" value="https://teechip.com/defaulttest/"/>
+<parameter name="appURL" value="https://teechip.com/defaulttest"/>
 <parameter name="browser" value="chrome"/>
 <parameter name="groups" value="all"/>
-  <test name="endToEndTest">
+  <test name="entToEndTest">
     <classes>
       <class name="com.teechip.BaseTest"/>
-      <class name="com.teechip.HomePageTest"/>
+      <class name="com.teechip.EndToEndTest"/>
 
     </classes>
   </test>
